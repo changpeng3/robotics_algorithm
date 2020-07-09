@@ -35,3 +35,6 @@ With multiple such resample steps, particles with lower weights are essentially 
 This in turn, improves the quality of particles survived the resample step.
 
 Even particles with higher weights could be duplicated after resample at step t, noise will be added to the duplicated particles which then differentiate them.
+
+In C++, std::discrete_distribution is used to simplify the resample code.
+https://en.cppreference.com/w/cpp/numeric/random/discrete_distribution
