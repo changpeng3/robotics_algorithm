@@ -15,6 +15,20 @@ By Chang Peng, 2020, 07/08
 1. Question: How many particles are necessary?
 
    Answer: Increasing number of particles would increase computational load
+   
+   "For this choice I often think about the trade-off between computational cost and the variance of the resulting estimates. As you increase the number of particles or sample size the former increase, while the latter decreases.
+    
+    Often I do a simple computational experiment:
+    
+    I create a grid of potential numbers of particle (say 102, 103 and 104).
+    
+    I do the filtering N times using each sample size.
+    
+    I plot the sample variance of the quantity I'm interested in (for example the variance of the estimated likelihood) on the Y axis, with the number of particles on the X axis.
+    
+    You should get a convex curve, that becomes flat as the number of particles increases. Generally I just look at it, and choose a number of particle that seems reasonable in the sense that increasing the number of particles further wouldn't reduce the variance by much.
+    
+    Obviously this is just a practical approach, maybe there are more rigorous ways of looking at the problem."
 
 2. Question: Does the number of particles change?
 
