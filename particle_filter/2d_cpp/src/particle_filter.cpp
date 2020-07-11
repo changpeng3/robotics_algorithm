@@ -134,6 +134,10 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
 
             // find the predicted measurement that is closest to each observed measurement and assign
             // the observed measurement to this particular landmark
+            // Chang's note: the observation at this time step is a set of landmakrs in "observations"
+            // Then j loop is too check each of the observed landmakrs;
+            // k loop is to check against "map" with landmark j at the current observation,
+            // associate the closest landmark from the map to landmark j at the current observation.
             Map::single_landmark_s landmark;
             double distance_min = std::numeric_limits<double>::max();
 
@@ -148,6 +152,7 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
 
             // update weights using Multivariate Gaussian Distribution
             // equation given in Transformations and Associations Quiz
+            // Chang's note: now that the observed landmakr has been associated with
             double num = exp(-0.5 * (pow((transformed_obs.x - landmark.x_f), 2) / pow(std_x, 2)
                     + pow((transformed_obs.y - landmark.y_f), 2) / pow(std_y, 2)));
             double denom = 2 * M_PI * std_x * std_y;
