@@ -11,7 +11,11 @@ By Chang Peng, 2020, 07/08
 ### Step 1: Initialization of particles
 1. Question: What is a particle in definition?
 
-   Answer: 
+   Answer: A particle is a belief, which is a location/pose of the ego object in the case of a localization problem.
+   Depending on the degrees of freedom, the particle is in the form of a set of float numbers. 
+   In the case of 2D, it could be three numbers: x-coordinate, y-coordinate, heading.
+   In the case of 3D, it could be a set of six numbers: x, y, z, yaw, pitch roll.
+   
 1. Question: How many particles are necessary?
 
    Answer: Increasing number of particles would increase computational load
