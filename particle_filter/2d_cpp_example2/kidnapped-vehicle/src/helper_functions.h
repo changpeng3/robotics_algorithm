@@ -114,6 +114,7 @@ inline bool read_map_data(std::string filename, Map& map) {
  * @output True if opening and reading file was successful
  */
 inline bool read_control_data(std::string filename, std::vector<control_s>& position_meas) {
+//bool read_control_data(std::string filename, std::vector<control_s>& position_meas) {
 
 	// Get file of position measurements:
 	std::ifstream in_file_pos(filename.c_str(), std::ifstream::in);

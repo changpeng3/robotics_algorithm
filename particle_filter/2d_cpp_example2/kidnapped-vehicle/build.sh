@@ -15,4 +15,7 @@ cd `dirname $0`
 # Compile code.
 mkdir -p build
 cd build
-CC=gcc-6 cmake .. && make
+#CC=gcc-6 cmake .. && make
+# above gcc-6 was modified to below two lines.
+cmake ..
+make
